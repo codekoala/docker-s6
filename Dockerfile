@@ -9,8 +9,8 @@ RUN echo -e "[instarch]\nServer = http://instarch.codekoala.com/\$arch/" >> /etc
 RUN pacman -Sqyu --noconfirm --needed --noprogressbar s6
 
 # setup a services directory
-RUN mkdir -p /services/.s6-svscan
 ADD finish /services/.s6-svscan/finish
 ADD crash /services/.s6-svscan/crash
+ADD run /usr/bin/run
 
-CMD ["/usr/bin/s6-svscan", "/services"]
+CMD ["/usr/bin/run"]
