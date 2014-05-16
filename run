@@ -1,5 +1,5 @@
 #!/bin/bash
 
-s6-svscan /services
-sleep infinite
+s6-svscan /services &
+sleep infinity
 s6-svscanctl -t /services
