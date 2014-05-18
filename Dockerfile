@@ -11,6 +11,5 @@ RUN pacman -Sqyu --noconfirm --needed --noprogressbar s6
 # setup a services directory
 ADD finish /services/.s6-svscan/finish
 ADD crash /services/.s6-svscan/crash
-ADD run /usr/bin/run
 
-CMD ["/usr/bin/run"]
+CMD ["/usr/bin/s6-svscan", "/services"]

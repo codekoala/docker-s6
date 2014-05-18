@@ -1,9 +1,0 @@
-#!/bin/bash
-
-echo "=> Starting services"
-s6-svscan /services &
-
-sleep infinity
-
-echo "=> Killing services"
-s6-svscanctl -t /services &> /dev/null
